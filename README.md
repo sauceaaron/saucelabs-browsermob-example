@@ -14,3 +14,10 @@ sc --proxy localhost:55555
 ```
 
 Note that the default port for browsermob proxy is random, but in my example is set to 55555.
+
+
+You can also use a PAC file to specify when to use browsermob proxy:
+
+sc -PAC browsermob.js
+
+(see the included browsermob.js file.  You may need to change the port if you are not using 55555.)
