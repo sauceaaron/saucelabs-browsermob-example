@@ -22,5 +22,3 @@ You can also use a PAC file to specify when to use browsermob proxy:
 
 (see the included browsermob.js file.  You may need to change the port if you are not using 55555.)
 
-
-Further documentation available at https://wiki.saucelabs.com/display/DOCS/Sauce+Connect+Proxy+with+an+Additional+Proxy+Setup
