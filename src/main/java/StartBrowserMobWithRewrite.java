@@ -6,14 +6,13 @@ import net.lightbody.bmp.filters.RequestFilter;
 import net.lightbody.bmp.util.HttpMessageContents;
 import net.lightbody.bmp.util.HttpMessageInfo;
 
-import java.util.Scanner;
-
 public class StartBrowserMobWithRewrite
 {
 	public static void main(String[] args)
 	{
 		System.out.println("starting browsermob proxy");
 		BrowserMobProxy proxy = new BrowserMobProxyServer();
+
 //		proxy.setTrustAllServers(true);
 //		proxy.rewriteUrl("http://dev.lightning.(.*$)", "http://$1");
 
