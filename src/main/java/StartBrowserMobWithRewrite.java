@@ -14,8 +14,8 @@ public class StartBrowserMobWithRewrite
 	{
 		System.out.println("starting browsermob proxy");
 		BrowserMobProxy proxy = new BrowserMobProxyServer();
-		proxy.setTrustAllServers(true);
-//		proxy.rewriteUrl("http://foo.test:9080/foo.html", "http://bar.test:9080/bar.html");
+//		proxy.setTrustAllServers(true);
+//		proxy.rewriteUrl("http://dev.lightning.(.*$)", "http://$1");
 
 		proxy.addRequestFilter(new RequestFilter()
 		{
@@ -24,6 +24,7 @@ public class StartBrowserMobWithRewrite
 			{
 				System.out.println("Original request URL: " + request.getUri());
 				request.setUri(request.getUri().replaceAll("foo", "bar"));
+				request.setUri(request.getUri().replace("dev.lightning.", ""));
 				System.out.println("Changed request URL: " + request.getUri());
 
 				return null;
@@ -31,6 +32,7 @@ public class StartBrowserMobWithRewrite
 		});
 
 		proxy.start(55555);
+
 		int port = proxy.getPort();
 		System.out.println("started proxy server on " + " http://localhost:" + port);
 
